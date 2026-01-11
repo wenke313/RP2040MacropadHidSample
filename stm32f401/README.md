@@ -104,6 +104,25 @@ Edit `Inc/config.h` to customize:
 2. **USB not recognized**: Verify USB D+/D- connections and 1.5kΩ pull-up on D+
 3. **Keys not responding**: Check GPIO configuration and pull-up resistors
 
+## 📚 Additional Documentation
+
+- **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - 详细的安装和编译指南 (Detailed setup in Chinese/English)
+- **[HARDWARE_GUIDE.md](HARDWARE_GUIDE.md)** - 硬件连接和接线图 (Hardware wiring diagrams)
+- **[PORTING_NOTES.md](PORTING_NOTES.md)** - RP2040与STM32实现对比 (RP2040 vs STM32 comparison)
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - 项目总结和技术细节 (Project summary and technical details)
+- **[examples/](examples/)** - 测试程序示例 (Example test programs)
+
+## 🎯 Quick Links
+
+- [Build Instructions](#build-instructions) - Start building
+- [Hardware Setup](HARDWARE_GUIDE.md) - Connect your hardware
+- [Troubleshooting](#troubleshooting) - Fix common issues
+- [Pin Configuration](#pin-configuration) - Customize pins
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome! See the main repository for contribution guidelines.
+
 ## License
 
 Same as the original project - MIT License
