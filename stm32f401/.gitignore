@@ -1,0 +1,24 @@
+# Build directories
+build/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+
+# Dependencies (will be downloaded by setup script)
+Drivers/STM32CubeF4/
+Drivers/tinyusb/
+Drivers/STM32F4xx_HAL_Driver
+Drivers/CMSIS
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# System files
+.DS_Store
+Thumbs.db

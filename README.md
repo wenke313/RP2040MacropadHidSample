@@ -1,5 +1,16 @@
-# Microsoft RP2040 LampArray Sample
-This project includes a sample for creating a LampArray deivce on the [Adafruit Macropad](https://www.adafruit.com/product/5128), which allows it to be controlled using Windows Lighting. This is done using the [Raspberry Pi Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf) and [TinyUSB](https://docs.tinyusb.org/en/latest/).
+# Microsoft RP2040 LampArray Sample (+ STM32F401 Port)
+
+This project includes a sample for creating a LampArray device on the [Adafruit Macropad](https://www.adafruit.com/product/5128), which allows it to be controlled using Windows Lighting. This is done using the [Raspberry Pi Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf) and [TinyUSB](https://docs.tinyusb.org/en/latest/).
+
+## 🆕 STM32F401 Port Available!
+
+**新增STM32F401移植版本！** This project now includes a port for **STM32F401 + WS2812** systems! See the [`stm32f401/`](stm32f401/) directory for the complete STM32 implementation.
+
+- ✅ Full USB HID keyboard support
+- ✅ WS2812B RGB LED control via PWM+DMA
+- ✅ LampArray HID standard implementation
+- ✅ Compatible with Windows Dynamic Lighting
+- 📖 Complete setup guide: [stm32f401/SETUP_GUIDE.md](stm32f401/SETUP_GUIDE.md)
 
 <img src="LightingDemo.gif" alt="Macropad RGB lights demo"/>
 
@@ -51,6 +62,33 @@ make
 9. On the Macropad, while holding down the rotary encoder button, press the reset button on the left side of the board, right under the OLED screen. Macropad device should show up as a removable device `RPI-RP2 (DriveLetter:)`
 10. Open an Explorer window to the build directory, and copy `macropad.uf2` under the build directory to the Macropad removeable device. Device should automatically remove itself and reboot.
 11. Open Settings > Personalization > Dynamic Lighting, and see the device come up. 
+
+## STM32F401 Port
+
+A complete port for **STM32F401 microcontroller with WS2812 RGB LEDs** is available in the [`stm32f401/`](stm32f401/) directory.
+
+### Key Features:
+- **Hardware Support**: STM32F401 (e.g., "Black Pill" board) with WS2812B LEDs
+- **Efficient WS2812 Driver**: Uses Timer1 + DMA for precise LED control
+- **USB HID**: Full keyboard and LampArray support via TinyUSB
+- **Easy Setup**: Automated dependency download script
+- **Build System**: Both CMake and Makefile support
+
+### Quick Start:
+```bash
+cd stm32f401
+./setup_dependencies.sh  # Download STM32 HAL and TinyUSB
+make                     # Build the firmware
+make flash              # Flash to your board
+```
+
+For detailed instructions, see [stm32f401/SETUP_GUIDE.md](stm32f401/SETUP_GUIDE.md)
+
+### Pin Configuration (Default):
+- WS2812 Data: PA8 (TIM1_CH1)
+- Keys: PB0-PB11
+- Rotary Encoder: PA0, PA1, PA2
+- USB: PA11, PA12
 
 ## Contributing
 
